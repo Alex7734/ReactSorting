@@ -55,7 +55,7 @@ function Sidebar() {
       else if(window.innerWidth>500)
          setMax(30);
       else
-         setMax(20);
+         setMax(25);
    }
 
    useEffect(() => {
@@ -82,7 +82,7 @@ function Sidebar() {
          <Slider 
             style={{width:'180px'}}
             size="small"
-            defaultValue={30}
+            defaultValue={25}
             id = 'slider'
             min={1}
             className = 'slider'

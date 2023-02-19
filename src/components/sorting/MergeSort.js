@@ -61,6 +61,7 @@ const MergeSort = () => {
    }
 
    const solve = () => {
+      setCount(0);
       mergeSort(values,ids,Math.ceil(Math.log(values.length+1)),0,values.length-1);
 
       setTimeout(() => {

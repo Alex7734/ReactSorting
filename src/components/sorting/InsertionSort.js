@@ -34,7 +34,7 @@ const InsertionSort = () =>{
    values = myState.values.map((item) => item[0]);
    
    const solve = () => {
-    setCount(0)
+    setCount(0);
       for(let i = 0; i < values.length-1; i++){
             let ind = i+1;
 

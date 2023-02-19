@@ -3,10 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import BubbleSort from './sorting/BubbleSort';
 import InsertionSort from './sorting/InsertionSort';
 import MergeSort from './sorting/MergeSort';
-// import InsertionSort from './InsertionSort';
-// import QuickSort from './QuickSort';
-// import MergeSort from './MergeSort';
-// import SelectionSort from './SelectionSort';
+import QuickSort from './sorting/QuickSort';
 
 import './Visuals.css';
 
@@ -59,7 +56,7 @@ function Visuals() {
    else if(myState.algorithm==='merge')
       speed *= 5;
    else if(myState.algorithm==='quick')
-      speed *= 6;
+      speed *= 10;
    console.log(myState.values);
   return (
     <div className="visuals">
@@ -98,9 +95,11 @@ function Visuals() {
          ? <MergeSort />
          : <></>
       }
-      {/*<MergeSort />
-      <QuickSort />
-      <SelectionSort /> */}
+      {
+         myState.algorithm==="quick"
+         ? <QuickSort />
+         : <></>
+      }
    </div>
   )
 }
