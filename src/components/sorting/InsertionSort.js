@@ -45,8 +45,6 @@ const InsertionSort = () =>{
                let temp = values[j];
                values[j] = values[j-1];
                values[j-1] = temp;
-               play();
-               increment();
                temp = ids[j];
                ids[j] = ids[j-1];
                ids[j-1] = temp;
@@ -57,9 +55,11 @@ const InsertionSort = () =>{
                   
                   document.getElementById(new_ids[j]).style.transform = `translateX(${j*11}px)`;
                   document.getElementById(new_ids[j-1]).childNodes[1].style.backgroundColor = 'black';
-                  
+
                   setTimeout(() => {
                      document.getElementById(new_ids[j-1]).childNodes[1].style.backgroundColor = myState.color;
+                     play();
+                     increment();
                   },myState.speed-10);
                   
                   document.getElementById(new_ids[j-1]).style.transform = `translateX(${(j-1)*11}px)`;  
@@ -76,10 +76,6 @@ const InsertionSort = () =>{
             _play:false
          })
 
-         dispatch({
-            type:'UPDATE_COLOR',
-            color: 'rgb(0, 182, 0)'
-         })
       },(total_time+1)*myState.speed+50);
    }
    
@@ -90,8 +86,11 @@ const InsertionSort = () =>{
       }
    },[myState.play]);
 
+ 
    return <>
-      
+      <p class="m-1">
+         {count} element switches
+      </p>
       </>;}
 
 export default InsertionSort;

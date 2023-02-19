@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import BubbleSort from './sorting/BubbleSort';
 import InsertionSort from './sorting/InsertionSort';
-
+import MergeSort from './sorting/MergeSort';
 // import InsertionSort from './InsertionSort';
 // import QuickSort from './QuickSort';
 // import MergeSort from './MergeSort';
@@ -82,9 +82,22 @@ function Visuals() {
          <button id = 'change-btn' onClick = {changeValues}>change values</button>   
          <button id='play-btn' onClick = {() => handlePlayPause(true)}>play</button>
       </div>
-
-      <BubbleSort/>
-      <InsertionSort />
+      
+      {
+      myState.algorithm == "bubble"
+         ? <BubbleSort/>
+         : <></> 
+      }
+      {
+         myState.algorithm==='insertion'
+         ? <InsertionSort />
+         : <></>
+      }
+      {
+         myState.algorithm==="merge"
+         ? <MergeSort />
+         : <></>
+      }
       {/*<MergeSort />
       <QuickSort />
       <SelectionSort /> */}
